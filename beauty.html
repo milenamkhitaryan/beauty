@@ -1,393 +1,643 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Guide to Beauty Procedures</title>
-    <style>
-        :root {
-            --primary: #8b5a2b;
-            --accent: #c9a882;
-            --bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --text: #333333;
-            --light-text: #666666;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty Glow Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fff7f7;
+      color: #3b2b2b;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg);
-            color: var(--text);
-            scroll-behavior: smooth;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        header {
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem 2rem;
-        }
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(255, 199, 213, 0.6), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(214, 175, 133, 0.35), transparent 35%),
+        #fff7f7;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
+    header {
+      width: 100%;
+      padding: 24px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 247, 247, 0.8);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
 
-        header p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.95;
-        }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #a45c65;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
+    .logo span {
+      color: #d5a061;
+    }
 
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 2rem;
-        }
+    nav {
+      display: flex;
+      gap: 26px;
+      font-size: 15px;
+      color: #6c5050;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            background: white;
-            padding: 0.6rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--primary);
-            border: 1px solid var(--accent);
-            transition: all 0.2s ease;
-        }
+    nav a {
+      position: relative;
+      transition: 0.3s ease;
+    }
 
-        .nav-links a:hover {
-            background: var(--primary);
-            color: white;
-        }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #c56b78;
+      transition: 0.3s ease;
+    }
 
-        .category {
-            margin-bottom: 3rem;
-            scroll-margin-top: 2rem;
-        }
+    nav a:hover {
+      color: #a45c65;
+    }
 
-        .category h2 {
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
-            margin-bottom: 1.2rem;
-            color: var(--primary);
-            font-size: 1.8rem;
-        }
+    nav a:hover::after {
+      width: 100%;
+    }
 
-        .procedure-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
+    .hero {
+      padding: 80px 8% 90px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
 
-        .procedure-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    .hero-content {
+      animation: fadeUp 1s ease forwards;
+    }
 
-        .procedure-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-        }
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(196, 107, 120, 0.22);
+      border-radius: 999px;
+      color: #a45c65;
+      font-size: 14px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(164, 92, 101, 0.08);
+    }
 
-        .procedure-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.6rem;
-            font-size: 1.25rem;
-        }
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 24px;
+      color: #3b2b2b;
+    }
 
-        .procedure-card p {
-            color: var(--light-text);
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-        }
+    h1 span {
+      color: #c56b78;
+      font-style: italic;
+    }
 
-        .tag {
-            display: inline-block;
-            background: #f0e6d6;
-            color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
+    .hero-content p {
+      max-width: 620px;
+      color: #6f5858;
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
 
-        footer {
-            background: #2c2c2c;
-            color: #e0e0e0;
-            text-align: center;
-            padding: 2.5rem 1rem;
-            margin-top: 3rem;
-        }
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-        .disclaimer {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: #ff9999;
-            background: rgba(255, 107, 107, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid #ff6b6b;
-        }
+    .btn {
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.35s ease;
+    }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .category h2 { font-size: 1.5rem; }
-            .nav-links { gap: 0.5rem; }
-            .nav-links a { font-size: 0.8rem; padding: 0.5rem 0.8rem; }
-        }
-    </style>
+    .btn-primary {
+      background: linear-gradient(135deg, #c56b78, #e0a46b);
+      color: #fff;
+      box-shadow: 0 16px 35px rgba(197, 107, 120, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.7);
+      color: #a45c65;
+      border: 1px solid rgba(164, 92, 101, 0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 560px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .main-photo {
+      position: absolute;
+      inset: 0;
+      border-radius: 45% 45% 28% 28%;
+      overflow: hidden;
+      box-shadow: 0 35px 80px rgba(85, 45, 45, 0.22);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .main-photo img,
+    .small-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .glow-circle {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255, 196, 210, 0.8), rgba(213, 160, 97, 0.45));
+      top: -30px;
+      right: -30px;
+      z-index: -1;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .small-card {
+      position: absolute;
+      width: 190px;
+      height: 235px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 55px rgba(85, 45, 45, 0.22);
+      border: 7px solid rgba(255, 255, 255, 0.86);
+      animation: floatSmall 4.5s ease-in-out infinite;
+    }
+
+    .small-card.one {
+      left: -35px;
+      bottom: 35px;
+    }
+
+    .small-card.two {
+      right: -28px;
+      top: 75px;
+      animation-delay: 0.8s;
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .section-title small {
+      color: #c56b78;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      margin-top: 10px;
+      color: #3b2b2b;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      padding: 34px;
+      border-radius: 32px;
+      box-shadow: 0 18px 45px rgba(116, 73, 73, 0.08);
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 26px 65px rgba(116, 73, 73, 0.14);
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ffd7df, #f4c08a);
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #4a3333;
+    }
+
+    .card p {
+      color: #705959;
+      font-size: 15.5px;
+    }
+
+    .languages {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 223, 230, 0.55));
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .language-box {
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(197, 107, 120, 0.12);
+      box-shadow: 0 20px 50px rgba(116, 73, 73, 0.08);
+    }
+
+    .language-box h3 {
+      color: #c56b78;
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .gallery-item {
+      min-height: 360px;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 22px 55px rgba(85, 45, 45, 0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item::after {
+      content: "Beauty in every detail";
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 20px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.35);
+    }
+
+    .cta {
+      margin: 60px 8% 90px;
+      padding: 70px 9%;
+      border-radius: 42px;
+      background: linear-gradient(135deg, #c56b78, #d5a061);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 75px rgba(197, 107, 120, 0.28);
+    }
+
+    .cta::before,
+    .cta::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      animation: pulse 5s ease-in-out infinite;
+    }
+
+    .cta::before {
+      top: -80px;
+      left: -60px;
+    }
+
+    .cta::after {
+      right: -70px;
+      bottom: -90px;
+      animation-delay: 1s;
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta p {
+      max-width: 740px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      opacity: 0.94;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta .btn {
+      display: inline-block;
+      background: #fff;
+      color: #b65f69;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      padding: 34px 8%;
+      text-align: center;
+      color: #7a6161;
+      border-top: 1px solid rgba(164, 92, 101, 0.12);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    @keyframes floatSmall {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-14px) rotate(2deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.14); opacity: 0.45; }
+    }
+
+    @media (max-width: 980px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+      }
+
+      .hero-image {
+        min-height: 520px;
+      }
+
+      .cards,
+      .language-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header,
+      .hero,
+      section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      nav {
+        gap: 14px;
+        font-size: 14px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .hero-image {
+        min-height: 430px;
+      }
+
+      .small-card {
+        width: 145px;
+        height: 180px;
+      }
+
+      .small-card.one {
+        left: -5px;
+      }
+
+      .small-card.two {
+        right: -5px;
+      }
+
+      .cta {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 48px 7%;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div class="logo">Glow<span>Beauty</span></div>
+      <nav>
+        <a href="#home">Главная</a>
+        <a href="#services">Услуги</a>
+        <a href="#languages">Перевод</a>
+        <a href="#gallery">Галерея</a>
+      </nav>
+    </header>
 
-<header>
-    <h1>✨ Beauty Procedures Directory</h1>
-    <p>A comprehensive, categorized guide to modern aesthetic, skincare, hair, and body treatments. Always consult licensed professionals before booking.</p>
-</header>
-
-<div class="container">
-    <nav class="nav-links">
-        <a href="#facial">Facial & Skin</a>
-        <a href="#advanced">Advanced & Laser</a>
-        <a href="#body">Body & Contouring</a>
-        <a href="#hair">Hair & Scalp</a>
-        <a href="#nails">Nail Care</a>
-        <a href="#permanent">Permanent & Semi-Permanent</a>
-        <a href="#surgical">Surgical Aesthetics</a>
-    </nav>
-
-    <section id="facial" class="category">
-        <h2>🌸 Facial & Skin Treatments</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>Classic Facial</h3>
-                <p>Cleansing, steam, exfoliation, extraction, mask, and moisturizer tailored to your skin type.</p>
-                <span class="tag">Maintenance</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Chemical Peel</h3>
-                <p>Application of acid solutions to remove damaged outer layers, improving texture and pigmentation.</p>
-                <span class="tag">Resurfacing</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Microdermabrasion</h3>
-                <p>Mechanical exfoliation using fine crystals or diamond tips to reveal brighter skin.</p>
-                <span class="tag">Exfoliation</span>
-            </div>
-            <div class="procedure-card">
-                <h3>HydraFacial</h3>
-                <p>Multi-step treatment combining cleansing, exfoliation, extraction, and hydration using vortex technology.</p>
-                <span class="tag">Hydration</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Microneedling</h3>
-                <p>Creates micro-injuries to stimulate collagen and elastin production for firmer skin.</p>
-                <span class="tag">Collagen Boost</span>
-            </div>
-            <div class="procedure-card">
-                <h3>LED Light Therapy</h3>
-                <p>Uses specific light wavelengths to target acne, inflammation, or stimulate cellular repair.</p>
-                <span class="tag">Non-Invasive</span>
-            </div>
+    <main id="home" class="hero">
+      <div class="hero-content">
+        <div class="badge">✨ Natural beauty · Soft glow · Premium care</div>
+        <h1>Красота, которая <span>сияет</span> естественно</h1>
+        <p>
+          Современный beauty-бренд для ухода за кожей, уверенности и нежного сияния каждый день.
+          Minimal, elegant and made for your glow.
+        </p>
+        <div class="buttons">
+          <a href="#services" class="btn btn-primary">Смотреть услуги</a>
+          <a href="#languages" class="btn btn-secondary">Տեսնել թարգմանությունը</a>
         </div>
-    </section>
+      </div>
 
-    <section id="advanced" class="category">
-        <h2>⚡ Advanced & Laser Procedures</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>Laser Hair Removal</h3>
-                <p>Targets hair follicles with concentrated light to reduce long-term hair growth.</p>
-                <span class="tag">Hair Reduction</span>
-            </div>
-            <div class="procedure-card">
-                <h3>IPL (Intense Pulsed Light)</h3>
-                <p>Broad-spectrum light treatment for sun spots, redness, and uneven skin tone.</p>
-                <span class="tag">Photorejuvenation</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Botox & Neurotoxins</h3>
-                <p>Injectable treatments that temporarily relax muscles to reduce fine lines and wrinkles.</p>
-                <span class="tag">Injectable</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Dermal Fillers</h3>
-                <p>Hyaluronic acid or collagen-based injections to restore volume and contour facial features.</p>
-                <span class="tag">Volume Restoration</span>
-            </div>
-            <div class="procedure-card">
-                <h3>PRP (Platelet-Rich Plasma)</h3>
-                <p>Uses your own blood plasma to promote skin healing, hair growth, and rejuvenation.</p>
-                <span class="tag">Regenerative</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Radiofrequency Skin Tightening</h3>
-                <p>Heat energy stimulates collagen to firm and lift sagging skin without surgery.</p>
-                <span class="tag">Lifting</span>
-            </div>
+      <div class="hero-image">
+        <div class="glow-circle"></div>
+        <div class="main-photo">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Beauty cosmetics" />
         </div>
-    </section>
-
-    <section id="body" class="category">
-        <h2>🧴 Body & Contouring Treatments</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>CoolSculpting (Cryolipolysis)</h3>
-                <p>Freezes and eliminates stubborn fat cells in targeted areas through controlled cooling.</p>
-                <span class="tag">Fat Reduction</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Cellulite Reduction</h3>
-                <p>Treatments like acoustic wave therapy, laser, or massage to improve skin dimpling.</p>
-                <span class="tag">Smoothing</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Lymphatic Drainage Massage</h3>
-                <p>Gentle technique to stimulate lymph flow, reduce swelling, and detoxify tissues.</p>
-                <span class="tag">Wellness</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Body Wraps & Scrubs</h3>
-                <p>Exfoliation and hydration treatments using clays, algae, or coffee to improve skin texture.</p>
-                <span class="tag">Spa Treatment</span>
-            </div>
+        <div class="small-card one">
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Makeup brushes" />
         </div>
-    </section>
-
-    <section id="hair" class="category">
-        <h2>💇 Hair & Scalp Care</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>Keratin Treatment</h3>
-                <p>Smoothes frizz and adds shine by infusing keratin protein into the hair shaft.</p>
-                <span class="tag">Smoothing</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Hair Coloring & Balayage</h3>
-                <p>Professional techniques for vibrant, natural, or highlighted hair transformations.</p>
-                <span class="tag">Color</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Scalp Micropigmentation</h3>
-                <p>Tattooing technique that mimics hair follicles to create the appearance of fuller hair.</p>
-                <span class="tag">Cosmetic Tattoo</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Hair Transplant (FUE/FUT)</h3>
-                <p>Surgical relocation of hair follicles from donor to thinning/balding areas.</p>
-                <span class="tag">Surgical</span>
-            </div>
+        <div class="small-card two">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Beauty model" />
         </div>
-    </section>
+      </div>
+    </main>
+  </div>
 
-    <section id="nails" class="category">
-        <h2>💅 Nail Care & Enhancements</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>Classic Manicure & Pedicure</h3>
-                <p>Nail shaping, cuticle care, exfoliation, massage, and polish application.</p>
-                <span class="tag">Maintenance</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Gel & Acrylic Extensions</h3>
-                <p>Durable nail enhancements that add length, strength, and design versatility.</p>
-                <span class="tag">Enhancement</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Nail Art & Embellishments</h3>
-                <p>Custom designs using paints, foils, gems, and 3D elements.</p>
-                <span class="tag">Creative</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Paraffin Wax Treatment</h3>
-                <p>Warm wax dip to deeply moisturize hands/feet and soften skin and cuticles.</p>
-                <span class="tag">Hydration</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="permanent" class="category">
-        <h2>🖋️ Permanent & Semi-Permanent Makeup</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>Microblading & Nano Brows</h3>
-                <p>Hand-held or machine technique to create hair-like strokes for fuller eyebrows.</p>
-                <span class="tag">Brows</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Eyelash Extensions</h3>
-                <p>Synthetic, mink, or silk fibers glued individually to natural lashes for length and volume.</p>
-                <span class="tag">Lashes</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Lash Lift & Tint</h3>
-                <p>Chemical curl and color treatment to enhance natural lashes without extensions.</p>
-                <span class="tag">Enhancement</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Lip Blush & Permanent Lip Liner</h3>
-                <p>Soft, watercolor-like pigment implantation to enhance lip color, shape, and symmetry.</p>
-                <span class="tag">Lips</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="surgical" class="category">
-        <h2>🔪 Surgical Aesthetic Procedures</h2>
-        <div class="procedure-grid">
-            <div class="procedure-card">
-                <h3>Rhinoplasty (Nose Job)</h3>
-                <p>Reshapes nasal structure for functional improvement or aesthetic harmony.</p>
-                <span class="tag">Facial Surgery</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Blepharoplasty (Eyelid Surgery)</h3>
-                <p>Removes excess skin/fat from upper/lower eyelids for a refreshed appearance.</p>
-                <span class="tag">Eye Area</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Facelift (Rhytidectomy)</h3>
-                <p>Tightens underlying tissues and removes excess skin to reverse visible aging.</p>
-                <span class="tag">Anti-Aging</span>
-            </div>
-            <div class="procedure-card">
-                <h3>Liposuction & Body Lift</h3>
-                <p>Surgical fat removal and contouring for dramatic body shape refinement.</p>
-                <span class="tag">Body Contouring</span>
-            </div>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <div class="disclaimer">
-        ⚠️ <strong>Medical Disclaimer:</strong> This directory is for informational purposes only and does not constitute medical advice. Always consult board-certified dermatologists, plastic surgeons, or licensed aesthetic professionals before undergoing any procedure. Results vary by individual.
+  <section id="services">
+    <div class="section-title">
+      <small>Our Beauty Rituals</small>
+      <h2>Уход, макияж и нежное сияние</h2>
     </div>
-    <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2026 Beauty Procedures Directory. Built for educational & reference use.</p>
-</footer>
 
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🌸</div>
+        <h3>Skin Care</h3>
+        <p>Лёгкий уход для свежей, мягкой и сияющей кожи. Подходит для ежедневной beauty-рутины.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💄</div>
+        <h3>Soft Makeup</h3>
+        <p>Натуральный макияж, который подчёркивает красоту, а не скрывает её.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Glow Style</h3>
+        <p>Эстетика чистоты, женственности и уверенности в каждом образе.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages" class="languages">
+    <div class="section-title">
+      <small>Three Languages</small>
+      <h2>Перевод на армянском, русском и английском</h2>
+    </div>
+
+    <div class="language-grid">
+      <div class="language-box">
+        <h3>Հայերեն</h3>
+        <p>
+          Բնական գեղեցկություն, նուրբ փայլ և ինքնավստահություն ամեն օր։
+          Քո մաշկը արժանի է սիրո, խնամքի և գեղեցիկ վերաբերմունքի։
+        </p>
+      </div>
+      <div class="language-box">
+        <h3>Русский</h3>
+        <p>
+          Естественная красота, нежное сияние и уверенность каждый день.
+          Твоя кожа заслуживает любви, ухода и красивого отношения.
+        </p>
+      </div>
+      <div class="language-box">
+        <h3>English</h3>
+        <p>
+          Natural beauty, soft glow and confidence every day.
+          Your skin deserves love, care and a beautiful ritual.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-title">
+      <small>Visual Mood</small>
+      <h2>Нежная beauty-эстетика</h2>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80" alt="Skincare products" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=800&q=80" alt="Cosmetics" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1583241800842-2798f082d42b?auto=format&fit=crop&w=800&q=80" alt="Beauty cream" />
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Ready to glow?</h2>
+    <p>
+      Սկսիր քո գեղեցկության նուրբ ճանապարհը այսօր · Начни свой путь к сиянию сегодня · Start your glow journey today.
+    </p>
+    <a href="#home" class="btn">Вернуться наверх</a>
+  </div>
+
+  <footer>
+    © 2026 GlowBeauty. Created with HTML & CSS only.
+  </footer>
 </body>
 </html>
+
