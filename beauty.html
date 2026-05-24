@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to Beauty Procedures</title>
+    <style>
+        :root {
+            --primary: #8b5a2b;
+            --accent: #c9a882;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --light-text: #666666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            background: white;
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid var(--accent);
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .category {
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .category h2 {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .procedure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .procedure-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .procedure-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .procedure-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            font-size: 1.25rem;
+        }
+
+        .procedure-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f0e6d6;
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #2c2c2c;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #ff9999;
+            background: rgba(255, 107, 107, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ff6b6b;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .category h2 { font-size: 1.5rem; }
+            .nav-links { gap: 0.5rem; }
+            .nav-links a { font-size: 0.8rem; padding: 0.5rem 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>✨ Beauty Procedures Directory</h1>
+    <p>A comprehensive, categorized guide to modern aesthetic, skincare, hair, and body treatments. Always consult licensed professionals before booking.</p>
+</header>
+
+<div class="container">
+    <nav class="nav-links">
+        <a href="#facial">Facial & Skin</a>
+        <a href="#advanced">Advanced & Laser</a>
+        <a href="#body">Body & Contouring</a>
+        <a href="#hair">Hair & Scalp</a>
+        <a href="#nails">Nail Care</a>
+        <a href="#permanent">Permanent & Semi-Permanent</a>
+        <a href="#surgical">Surgical Aesthetics</a>
+    </nav>
+
+    <section id="facial" class="category">
+        <h2>🌸 Facial & Skin Treatments</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>Classic Facial</h3>
+                <p>Cleansing, steam, exfoliation, extraction, mask, and moisturizer tailored to your skin type.</p>
+                <span class="tag">Maintenance</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Chemical Peel</h3>
+                <p>Application of acid solutions to remove damaged outer layers, improving texture and pigmentation.</p>
+                <span class="tag">Resurfacing</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Microdermabrasion</h3>
+                <p>Mechanical exfoliation using fine crystals or diamond tips to reveal brighter skin.</p>
+                <span class="tag">Exfoliation</span>
+            </div>
+            <div class="procedure-card">
+                <h3>HydraFacial</h3>
+                <p>Multi-step treatment combining cleansing, exfoliation, extraction, and hydration using vortex technology.</p>
+                <span class="tag">Hydration</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Microneedling</h3>
+                <p>Creates micro-injuries to stimulate collagen and elastin production for firmer skin.</p>
+                <span class="tag">Collagen Boost</span>
+            </div>
+            <div class="procedure-card">
+                <h3>LED Light Therapy</h3>
+                <p>Uses specific light wavelengths to target acne, inflammation, or stimulate cellular repair.</p>
+                <span class="tag">Non-Invasive</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="advanced" class="category">
+        <h2>⚡ Advanced & Laser Procedures</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>Laser Hair Removal</h3>
+                <p>Targets hair follicles with concentrated light to reduce long-term hair growth.</p>
+                <span class="tag">Hair Reduction</span>
+            </div>
+            <div class="procedure-card">
+                <h3>IPL (Intense Pulsed Light)</h3>
+                <p>Broad-spectrum light treatment for sun spots, redness, and uneven skin tone.</p>
+                <span class="tag">Photorejuvenation</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Botox & Neurotoxins</h3>
+                <p>Injectable treatments that temporarily relax muscles to reduce fine lines and wrinkles.</p>
+                <span class="tag">Injectable</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Dermal Fillers</h3>
+                <p>Hyaluronic acid or collagen-based injections to restore volume and contour facial features.</p>
+                <span class="tag">Volume Restoration</span>
+            </div>
+            <div class="procedure-card">
+                <h3>PRP (Platelet-Rich Plasma)</h3>
+                <p>Uses your own blood plasma to promote skin healing, hair growth, and rejuvenation.</p>
+                <span class="tag">Regenerative</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Radiofrequency Skin Tightening</h3>
+                <p>Heat energy stimulates collagen to firm and lift sagging skin without surgery.</p>
+                <span class="tag">Lifting</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="body" class="category">
+        <h2>🧴 Body & Contouring Treatments</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>CoolSculpting (Cryolipolysis)</h3>
+                <p>Freezes and eliminates stubborn fat cells in targeted areas through controlled cooling.</p>
+                <span class="tag">Fat Reduction</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Cellulite Reduction</h3>
+                <p>Treatments like acoustic wave therapy, laser, or massage to improve skin dimpling.</p>
+                <span class="tag">Smoothing</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Lymphatic Drainage Massage</h3>
+                <p>Gentle technique to stimulate lymph flow, reduce swelling, and detoxify tissues.</p>
+                <span class="tag">Wellness</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Body Wraps & Scrubs</h3>
+                <p>Exfoliation and hydration treatments using clays, algae, or coffee to improve skin texture.</p>
+                <span class="tag">Spa Treatment</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="hair" class="category">
+        <h2>💇 Hair & Scalp Care</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>Keratin Treatment</h3>
+                <p>Smoothes frizz and adds shine by infusing keratin protein into the hair shaft.</p>
+                <span class="tag">Smoothing</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Hair Coloring & Balayage</h3>
+                <p>Professional techniques for vibrant, natural, or highlighted hair transformations.</p>
+                <span class="tag">Color</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Scalp Micropigmentation</h3>
+                <p>Tattooing technique that mimics hair follicles to create the appearance of fuller hair.</p>
+                <span class="tag">Cosmetic Tattoo</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Hair Transplant (FUE/FUT)</h3>
+                <p>Surgical relocation of hair follicles from donor to thinning/balding areas.</p>
+                <span class="tag">Surgical</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="nails" class="category">
+        <h2>💅 Nail Care & Enhancements</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>Classic Manicure & Pedicure</h3>
+                <p>Nail shaping, cuticle care, exfoliation, massage, and polish application.</p>
+                <span class="tag">Maintenance</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Gel & Acrylic Extensions</h3>
+                <p>Durable nail enhancements that add length, strength, and design versatility.</p>
+                <span class="tag">Enhancement</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Nail Art & Embellishments</h3>
+                <p>Custom designs using paints, foils, gems, and 3D elements.</p>
+                <span class="tag">Creative</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Paraffin Wax Treatment</h3>
+                <p>Warm wax dip to deeply moisturize hands/feet and soften skin and cuticles.</p>
+                <span class="tag">Hydration</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="permanent" class="category">
+        <h2>🖋️ Permanent & Semi-Permanent Makeup</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>Microblading & Nano Brows</h3>
+                <p>Hand-held or machine technique to create hair-like strokes for fuller eyebrows.</p>
+                <span class="tag">Brows</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Eyelash Extensions</h3>
+                <p>Synthetic, mink, or silk fibers glued individually to natural lashes for length and volume.</p>
+                <span class="tag">Lashes</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Lash Lift & Tint</h3>
+                <p>Chemical curl and color treatment to enhance natural lashes without extensions.</p>
+                <span class="tag">Enhancement</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Lip Blush & Permanent Lip Liner</h3>
+                <p>Soft, watercolor-like pigment implantation to enhance lip color, shape, and symmetry.</p>
+                <span class="tag">Lips</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="surgical" class="category">
+        <h2>🔪 Surgical Aesthetic Procedures</h2>
+        <div class="procedure-grid">
+            <div class="procedure-card">
+                <h3>Rhinoplasty (Nose Job)</h3>
+                <p>Reshapes nasal structure for functional improvement or aesthetic harmony.</p>
+                <span class="tag">Facial Surgery</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Blepharoplasty (Eyelid Surgery)</h3>
+                <p>Removes excess skin/fat from upper/lower eyelids for a refreshed appearance.</p>
+                <span class="tag">Eye Area</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Facelift (Rhytidectomy)</h3>
+                <p>Tightens underlying tissues and removes excess skin to reverse visible aging.</p>
+                <span class="tag">Anti-Aging</span>
+            </div>
+            <div class="procedure-card">
+                <h3>Liposuction & Body Lift</h3>
+                <p>Surgical fat removal and contouring for dramatic body shape refinement.</p>
+                <span class="tag">Body Contouring</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="disclaimer">
+        ⚠️ <strong>Medical Disclaimer:</strong> This directory is for informational purposes only and does not constitute medical advice. Always consult board-certified dermatologists, plastic surgeons, or licensed aesthetic professionals before undergoing any procedure. Results vary by individual.
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2026 Beauty Procedures Directory. Built for educational & reference use.</p>
+</footer>
+
+</body>
+</html>
